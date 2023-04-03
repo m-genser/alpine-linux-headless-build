@@ -1,0 +1,13 @@
+# Sample network interfaces file
+
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+	address 10.0.0.29/24
+	hostname localhost
+
+auto wlan0
+iface wlan0 inet dhcp
+	hostname localhost
