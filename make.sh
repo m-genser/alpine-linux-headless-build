@@ -12,4 +12,5 @@ wget https://github.com/m-genser/alpine-linux-headless-mod/releases/download/mai
 mv ./headless.apkovl.tar.gz ./unziped/alpine-rpi-3.17.3-aarch64/headless.apkovl.tar.gz
 
 # Create a ZIP archive of the extracted files
-zip -r ./alpine-rpi-3.17.3-aarch64.zip ./unziped/alpine-rpi-3.17.3-aarch64/
+cd ./unziped/alpine-rpi-3.17.3-aarch64/
+zip -r ./alpine-rpi-3.17.3-aarch64.zip ./*
