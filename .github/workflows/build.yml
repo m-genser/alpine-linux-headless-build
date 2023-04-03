@@ -1,0 +1,30 @@
+name: Automatic build for Alpine Linux initial FS
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+    - uses: actions/checkout@v3.3.0
+      
+    - name: Download and Build headless Alpine Linux FS
+      id: create_fs
+      shell: bash
+      run: ./make.sh
+      
+    - name: Upload FS to repo release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        file: ./alpine-rpi-3.17.3-aarch64.zip
+        asset_name: alpine-rpi-3.17.3-aarch64-headless.zip
+        tag: ${{ github.ref }}
+        overwrite: true
+        body: "In the attachement is the latest filesystem as ZIP archive."
