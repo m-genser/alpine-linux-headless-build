@@ -7,4 +7,4 @@ wget https://dl-cdn.alpinelinux.org/alpine/v3.17/releases/aarch64/alpine-rpi-3.1
 tar -zxvf alpine-rpi-3.17.3-aarch64.tar.gz
 
 # Create a ZIP archive of the extracted files
-zip -r alpine-rpi-3.17.3-aarch64.zip alpine-rpi-3.17.3-aarch64/
+zip -r ./alpine-rpi-3.17.3-aarch64.zip ./alpine-rpi-3.17.3-aarch64/
