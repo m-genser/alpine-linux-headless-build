@@ -18,7 +18,7 @@ jobs:
     - name: Download and Build headless Alpine Linux FS
       id: create_fs
       shell: bash
-      run: git update-index --chmod=+x ./make.sh && ./make.sh
+      run: ./make.sh
       
     - name: Upload FS to repo release
       uses: svenstaro/upload-release-action@v2
