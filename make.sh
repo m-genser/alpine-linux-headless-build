@@ -11,5 +11,8 @@ tar -zxvf ./alpine-rpi-3.17.3-aarch64.tar.gz -C ./unziped/alpine-rpi-3.17.3-aarc
 wget https://github.com/m-genser/alpine-linux-headless-mod/releases/download/main/headless.apkovl.tar.gz -O ./headless.apkovl.tar.gz
 mv ./headless.apkovl.tar.gz ./unziped/alpine-rpi-3.17.3-aarch64/headless.apkovl.tar.gz
 
+# Copy the interfaces on the FS (so that we can connect to the PI with a known IP)
+mv ./interfaces ./unziped/alpine-rpi-3.17.3-aarch64/interfaces
+
 # Create a ZIP archive of the extracted files
 cd unziped/alpine-rpi-3.17.3-aarch64 && zip -r ../../alpine-rpi-3.17.3-aarch64.zip * -x alpine-rpi-3.17.3-aarch64 && cd ../..
